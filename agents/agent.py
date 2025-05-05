@@ -13,7 +13,7 @@ from tools.mathtools import multiply, add, subtract, divide, modulus
 
 
 # load the system prompt from the file
-with open("system_prompt.txt", "r") as f:
+with open("system_prompt.txt", "r", encoding="utf-8") as f:
     system_prompt = f.read()
 
 # System message

@@ -1,3 +1,4 @@
+import cmath
 from langchain_core.tools import tool
 
 
@@ -24,7 +25,7 @@ def add(a: float, b: float) -> float:
 
 
 @tool
-def subtract(a: float, b: float) -> int:
+def subtract(a: float, b: float) -> float:
     """
     Subtracts two numbers.
     Args:

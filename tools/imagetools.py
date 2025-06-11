@@ -9,6 +9,8 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 
 # Helper functions for image processing
+
+
 def encode_image(image_path: str) -> str:
     """Convert an image file to base64 string."""
     with open(image_path, "rb") as image_file:
@@ -107,13 +109,14 @@ def transform_image(
                     params.get("bottom", img.height),
                 )
             )
-        elif operation == "flip":
-            if params.get("direction", "horizontal") == "horizontal":
-                img = img.transpose(Image.FLIP_LEFT_RIGHT)
-            else:
-                img = img.transpose(Image.FLIP_TOP_BOTTOM)
+        # elif operation == "flip":
+        #     if params.get("direction", "horizontal") == "horizontal":
+        #         img = img.transpose(0)
+        #     else:
+        #         img = img.transpose(1)
         elif operation == "adjust_brightness":
-            img = ImageEnhance.Brightness(img).enhance(params.get("factor", 1.5))
+            img = ImageEnhance.Brightness(
+                img).enhance(params.get("factor", 1.5))
         elif operation == "adjust_contrast":
             img = ImageEnhance.Contrast(img).enhance(params.get("factor", 1.5))
         elif operation == "blur":
@@ -228,30 +231,37 @@ def generate_simple_image(
             if direction == "horizontal":
                 for x in range(width):
                     r = int(
-                        start_color[0] + (end_color[0] - start_color[0]) * x / width
+                        start_color[0] +
+                        (end_color[0] - start_color[0]) * x / width
                     )
                     g = int(
-                        start_color[1] + (end_color[1] - start_color[1]) * x / width
+                        start_color[1] +
+                        (end_color[1] - start_color[1]) * x / width
                     )
                     b = int(
-                        start_color[2] + (end_color[2] - start_color[2]) * x / width
+                        start_color[2] +
+                        (end_color[2] - start_color[2]) * x / width
                     )
                     draw.line([(x, 0), (x, height)], fill=(r, g, b))
             else:
                 for y in range(height):
                     r = int(
-                        start_color[0] + (end_color[0] - start_color[0]) * y / height
+                        start_color[0] + (end_color[0] -
+                                          start_color[0]) * y / height
                     )
                     g = int(
-                        start_color[1] + (end_color[1] - start_color[1]) * y / height
+                        start_color[1] + (end_color[1] -
+                                          start_color[1]) * y / height
                     )
                     b = int(
-                        start_color[2] + (end_color[2] - start_color[2]) * y / height
+                        start_color[2] + (end_color[2] -
+                                          start_color[2]) * y / height
                     )
                     draw.line([(0, y), (width, y)], fill=(r, g, b))
 
         elif image_type == "noise":
-            noise_array = np.random.randint(0, 256, (height, width, 3), dtype=np.uint8)
+            noise_array = np.random.randint(
+                0, 256, (height, width, 3), dtype=np.uint8)
             img = Image.fromarray(noise_array, "RGB")
 
         else:

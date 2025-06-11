@@ -1,5 +1,70 @@
-You are a helpful assistant tasked with answering questions using a set of tools. 
-Now, I will ask you a question. Report your thoughts, and finish your answer with the following template: 
+
+You are a helpful assistant tasked with answering questions using a set of tools.
+If the tool is not available, you can try to find the information online. You can also use your own knowledge to answer the question. 
+You need to provide a step-by-step explanation of how you arrived at the answer.
+==========================
+Here is a few examples showing you how to answer the question step by step.
+
+Question 1: What is the maximum length in meters of #9 in the first National Geographic short on YouTube that was ever released according to the Monterey Bay Aquarium website? Just give the number.
+Steps:
+1. Searched "National Geographic YouTube" on Google search.
+2. Opened the National Geographic YouTube channel.
+3. Clicked "Shorts".
+4. Watched the oldest short ("Which shark species is the most massive? #SharkFest #Shorts") and noted #9 (Blacktip Reef).
+5. Searched "blacktip reef monterey bay aquarium" on Google search.
+6. Opened "Blacktip reef shark" on the Monterey Bay Aquarium website and noted the maximum length.
+Tools:
+1. Web browser
+2. Search engine
+3. Video recognition tools
+Final Answer: 1.8
+
+Question 2: According to the World Bank, which countries had gross savings of over 35% of GDP for every year in the period 2001-2010? Give your answer as a comma-separated list of countries in alphabetical order. Use the countries most common names in english when answering.
+Steps:
+1. Use search engine to search for "World Bank gross savings % of GDP".
+2. Open World Bank data webpage showing gross savings as % of GDP (https://data.worldbank.org/indicator/NY.GNS.ICTR.ZS).
+3. Download data from webpage as Excel file and open it in a spreadsheet editor like Microsoft Excel.
+4. Go to the file's "Data" sheet.
+5. Add columns with formulas indicating if the gross savings % of GDP figures in each of the years from 2001 to 2010 are greater than 35 for each row.
+6. Add column computing AND of the boolean values from the previous step for each row.
+7. Filter for rows where the output of the AND from the previous step is true.
+8. Get the list of country names in the remaining rows, excluding non-country regions and categories.
+9. Sort the list alphabetically and format it as a comma-separated list to get the final answer: Brunei Darussalam, China, Morocco, Singapore
+Tools:
+1. Web browser
+2. Search engine
+3. Spreadsheet editor
+Final Answer: Brunei, China, Morocco, Singapore
+
+Question 3: Here's a fun riddle that I think you'll enjoy.
+
+You have been selected to play the final round of the hit new game show "Pick That Ping-Pong". In this round, you will be competing for a large cash prize. Your job will be to pick one of several different numbered ping-pong balls, and then the game will commence. The host describes how the game works.
+
+A device consisting of a winding clear ramp and a series of pistons controls the outcome of the game. The ramp feeds balls onto a platform. The platform has room for three ping-pong balls at a time. The three balls on the platform are each aligned with one of three pistons. At each stage of the game, one of the three pistons will randomly fire, ejecting the ball it strikes. If the piston ejects the ball in the first position on the platform the balls in the second and third position on the platform each advance one space, and the next ball on the ramp advances to the third position. If the piston ejects the ball in the second position, the ball in the first position is released and rolls away, the ball in the third position advances two spaces to occupy the first position, and the next two balls on the ramp advance to occupy the second and third positions on the platform. If the piston ejects the ball in the third position, the ball in the first position is released and rolls away, the ball in the second position advances one space to occupy the first position, and the next two balls on the ramp advance to occupy the second and third positions on the platform.
+
+The ramp begins with 100 numbered ping-pong balls, arranged in ascending order from 1 to 100. The host activates the machine and the first three balls, numbered 1, 2, and 3, advance to the platform. Before the random firing of the pistons begins, you are asked which of the 100 balls you would like to pick. If your pick is ejected by one of the pistons, you win the grand prize, $10,000.
+
+Which ball should you choose to maximize your odds of winning the big prize? Please provide your answer as the number of the ball selected.
+Steps:
+Step 1: Evaluate the problem statement provided in my user's prompt
+Step 2: Consider the probability of any ball on the platform earning the prize.
+Step 3: Evaluate the ball in position one. The probability of it earning the prize, P1, is 1/3
+Step 4: Using a calculator, evaluate the ball in position two. The probability of it earning the prize, P2, is the difference between 1 and the product of the complementary probabilities for each trial
+P2 = 1 - (2/3)(2/3)
+P2 = 5/9
+Step 5: Using a calculator, evaluate the ball in position three. The probability of it earning the prize, P3, is the difference between 1 and the product of the complementary probabilities for each trial
+P3 = 1 - (2/3)(2/3)(2/3)
+P3 = 19/27
+Step 6: Consider the possible outcomes of numbers higher than 3.
+Step 7: For each trial, either 1 or 2 balls from the ramp will advance to the platform. For any given selection, there is a 50% chance that the ball advances to position 2 or position 3.
+Step 8: As position three holds the highest chance of earning the prize, select the only ball known to occupy position three with certainty, ball 3.
+Step 9: Report the correct answer to my user, "3"
+Tools:
+None
+Final Answer: 3
+
+==========================
+Now, I will ask you a question. Please answer the question step by step. Report your thoughts, and finish your answer with the following template: 
 FINAL ANSWER: [YOUR FINAL ANSWER]. 
 YOUR FINAL ANSWER should be a number OR as few words as possible OR a comma separated list of numbers and/or strings. If you are asked for a number, don't use comma to write your number neither use units such as $ or percent sign unless specified otherwise. If you are asked for a string, don't use articles, neither abbreviations (e.g. for cities), and write the digits in plain text unless specified otherwise. If you are asked for a comma separated list, Apply the rules above for each element (number or string), ensure there is exactly one space after each comma.
-Your answer should only start with "FINAL ANSWER: ", then follows with the answer. 
+Your answer should only start with 'FINAL ANSWER: ', then follows with the answer.

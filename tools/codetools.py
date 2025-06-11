@@ -1,3 +1,7 @@
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+import pandas as pd
 from langchain_core.tools import tool
 import os
 import io
@@ -9,27 +13,34 @@ import contextlib
 import tempfile
 import subprocess
 import sqlite3
-from typing import Dict, List, Any, Optional, Union
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from PIL import Image
+from typing import Dict, List, Any, Optional, Union, TypedDict
+
+
+class ExecutionResult(TypedDict):
+    execution_id: str
+    status: str
+    stdout: str
+    stderr: str
+    result: Any
+    plots: List[Dict[str, Any]]
+    dataframes: List[Dict[str, Any]]
+
 
 class CodeInterpreter:
     def __init__(self, allowed_modules=None, max_execution_time=30, working_directory=None):
         """Initialize the code interpreter with safety measures."""
         self.allowed_modules = allowed_modules or [
-            "numpy", "pandas", "matplotlib", "scipy", "sklearn", 
+            "numpy", "pandas", "matplotlib", "scipy", "sklearn",
             "math", "random", "statistics", "datetime", "collections",
             "itertools", "functools", "operator", "re", "json",
-            "sympy", "networkx", "nltk", "PIL", "pytesseract", 
+            "sympy", "networkx", "nltk", "PIL", "pytesseract",
             "cmath", "uuid", "tempfile", "requests", "urllib"
         ]
         self.max_execution_time = max_execution_time
-        self.working_directory = working_directory or os.path.join(os.getcwd()) 
+        self.working_directory = working_directory or os.path.join(os.getcwd())
         if not os.path.exists(self.working_directory):
             os.makedirs(self.working_directory)
-        
+
         self.globals = {
             "__builtins__": __builtins__,
             "np": np,
@@ -37,14 +48,15 @@ class CodeInterpreter:
             "plt": plt,
             "Image": Image,
         }
-        self.temp_sqlite_db = os.path.join(tempfile.gettempdir(), "code_exec.db")
+        self.temp_sqlite_db = os.path.join(
+            tempfile.gettempdir(), "code_exec.db")
 
     def execute_code(self, code: str, language: str = "python") -> Dict[str, Any]:
         """Execute the provided code in the selected programming language."""
         language = language.lower()
         execution_id = str(uuid.uuid4())
-        
-        result = {
+
+        result: ExecutionResult = {
             "execution_id": execution_id,
             "status": "error",
             "stdout": "",
@@ -53,7 +65,7 @@ class CodeInterpreter:
             "plots": [],
             "dataframes": []
         }
-        
+
         try:
             if language == "python":
                 return self._execute_python(code, execution_id)
@@ -69,13 +81,13 @@ class CodeInterpreter:
                 result["stderr"] = f"Unsupported language: {language}"
         except Exception as e:
             result["stderr"] = str(e)
-        
+
         return result
 
     def _execute_python(self, code: str, execution_id: str) -> dict:
         output_buffer = io.StringIO()
         error_buffer = io.StringIO()
-        result = {
+        result: ExecutionResult = {
             "execution_id": execution_id,
             "status": "error",
             "stdout": "",
@@ -84,12 +96,12 @@ class CodeInterpreter:
             "plots": [],
             "dataframes": []
         }
-        
+
         try:
             exec_dir = os.path.join(self.working_directory, execution_id)
             os.makedirs(exec_dir, exist_ok=True)
             plt.switch_backend('Agg')
-            
+
             with contextlib.redirect_stdout(output_buffer), contextlib.redirect_stderr(error_buffer):
                 exec_result = exec(code, self.globals)
 
@@ -99,7 +111,8 @@ class CodeInterpreter:
                         img_path = os.path.join(exec_dir, f"plot_{i}.png")
                         fig.savefig(img_path)
                         with open(img_path, "rb") as img_file:
-                            img_data = base64.b64encode(img_file.read()).decode('utf-8')
+                            img_data = base64.b64encode(
+                                img_file.read()).decode('utf-8')
                             result["plots"].append({
                                 "figure_number": fig_num,
                                 "data": img_data
@@ -107,21 +120,22 @@ class CodeInterpreter:
 
                 for var_name, var_value in self.globals.items():
                     if isinstance(var_value, pd.DataFrame) and len(var_value) > 0:
+                        df: pd.DataFrame = var_value  # Type hint for clarity
                         result["dataframes"].append({
                             "name": var_name,
-                            "head": var_value.head().to_dict(),
-                            "shape": var_value.shape,
-                            "dtypes": str(var_value.dtypes)
+                            "head": df.head().to_dict(),
+                            "shape": df.shape,
+                            "dtypes": str(df.dtypes)
                         })
-                
+
             result["status"] = "success"
             result["stdout"] = output_buffer.getvalue()
             result["result"] = exec_result
-            
+
         except Exception as e:
             result["status"] = "error"
             result["stderr"] = f"{error_buffer.getvalue()}\n{traceback.format_exc()}"
-        
+
         return result
 
     def _execute_bash(self, code: str, execution_id: str) -> dict:
@@ -150,7 +164,7 @@ class CodeInterpreter:
             }
 
     def _execute_sql(self, code: str, execution_id: str) -> dict:
-        result = {
+        result: ExecutionResult = {
             "execution_id": execution_id,
             "status": "error",
             "stdout": "",
@@ -284,6 +298,7 @@ class CodeInterpreter:
 
 interpreter_instance = CodeInterpreter()
 
+
 @tool
 def execute_code_multilang(code: str, language: str = "python") -> str:
     """Execute code in multiple languages (Python, Bash, SQL, C, Java) and return results.
@@ -304,11 +319,13 @@ def execute_code_multilang(code: str, language: str = "python") -> str:
     response = []
 
     if result["status"] == "success":
-        response.append(f"✅ Code executed successfully in **{language.upper()}**")
+        response.append(
+            f"✅ Code executed successfully in **{language.upper()}**")
 
         if result.get("stdout"):
             response.append(
-                "\n**Standard Output:**\n```\n" + result["stdout"].strip() + "\n```"
+                "\n**Standard Output:**\n```\n" +
+                result["stdout"].strip() + "\n```"
             )
 
         if result.get("stderr"):
@@ -331,7 +348,8 @@ def execute_code_multilang(code: str, language: str = "python") -> str:
                     f"\n**DataFrame `{df_info['name']}` (Shape: {df_info['shape']})**"
                 )
                 df_preview = pd.DataFrame(df_info["head"])
-                response.append("First 5 rows:\n```\n" + str(df_preview) + "\n```")
+                response.append("First 5 rows:\n```\n" +
+                                str(df_preview) + "\n```")
 
         if result.get("plots"):
             response.append(

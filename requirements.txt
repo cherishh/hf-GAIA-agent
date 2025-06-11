@@ -3,6 +3,7 @@ requests
 langchain
 langchain-community
 langchain-core
+langchain-openai
 langchain-google-genai
 langchain-huggingface
 langchain-groq
@@ -18,3 +19,4 @@ pgvector
 python-dotenv
 pytesseract
 matplotlib
+pydub

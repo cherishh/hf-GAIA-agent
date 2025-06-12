@@ -5,63 +5,57 @@ You need to provide a step-by-step explanation of how you arrived at the answer.
 ==========================
 Here is a few examples showing you how to answer the question step by step.
 
-Question 1: What is the maximum length in meters of #9 in the first National Geographic short on YouTube that was ever released according to the Monterey Bay Aquarium website? Just give the number.
+Question 1: The attached spreadsheet contains the sales of menu items for a regional fast-food chain. Which city had the greater total sales: Wharvton or Algrimand?
 Steps:
-1. Searched "National Geographic YouTube" on Google search.
-2. Opened the National Geographic YouTube channel.
-3. Clicked "Shorts".
-4. Watched the oldest short ("Which shark species is the most massive? #SharkFest #Shorts") and noted #9 (Blacktip Reef).
-5. Searched "blacktip reef monterey bay aquarium" on Google search.
-6. Opened "Blacktip reef shark" on the Monterey Bay Aquarium website and noted the maximum length.
+1. Open the attached file.
+2. Locate the rows representing Wharvton and Algrimand.
+3. Write functions to sum each relevant row.
+4. Compare the sums.
 Tools:
-1. Web browser
-2. Search engine
-3. Video recognition tools
-Final Answer: 1.8
+1. Excel
+2. Calculator
+Final Answer: Wharvton
 
-Question 2: According to the World Bank, which countries had gross savings of over 35% of GDP for every year in the period 2001-2010? Give your answer as a comma-separated list of countries in alphabetical order. Use the countries most common names in english when answering.
+Question 2: If this whole pint is made up of ice cream, how many percent above or below the US federal standards for butterfat content is it when using the standards as reported by Wikipedia in 2020? Answer as + or - a number rounded to one decimal place.
 Steps:
-1. Use search engine to search for "World Bank gross savings % of GDP".
-2. Open World Bank data webpage showing gross savings as % of GDP (https://data.worldbank.org/indicator/NY.GNS.ICTR.ZS).
-3. Download data from webpage as Excel file and open it in a spreadsheet editor like Microsoft Excel.
-4. Go to the file's "Data" sheet.
-5. Add columns with formulas indicating if the gross savings % of GDP figures in each of the years from 2001 to 2010 are greater than 35 for each row.
-6. Add column computing AND of the boolean values from the previous step for each row.
-7. Filter for rows where the output of the AND from the previous step is true.
-8. Get the list of country names in the remaining rows, excluding non-country regions and categories.
-9. Sort the list alphabetically and format it as a comma-separated list to get the final answer: Brunei Darussalam, China, Morocco, Singapore
+1. Open the image.
+2. Search "butterfat wikipedia" on Google search.
+3. Open the Butterfat Wikipedia page.
+4. Click "View history" on the page.
+5. Scroll down to the end of 2020 and click the last 2020 version of the page.
+6. Check the ice cream requirement for fat content (10%).
+7. Click "View history" on the page.
+8. Scroll down to the beginning of 2020 and click the last 2019 version of the page.
+9. Check the ice cream requirement for fat content to ensure it's the same (10%).
+10. Calculate the fat percentage of the pint of ice cream from the image of the nutrition panel (21g fat per serving / 144g ice cream per serving = 14.6%).
+11. Calculate the difference from the standard (14.6% - 10% = 4.6%).
 Tools:
-1. Web browser
-2. Search engine
-3. Spreadsheet editor
-Final Answer: Brunei, China, Morocco, Singapore
+1. Image recognition tools
+2. Calculator
+3. Web browser
+4. Search engine
+Final Answer: +4.6
 
-Question 3: Here's a fun riddle that I think you'll enjoy.
-
-You have been selected to play the final round of the hit new game show "Pick That Ping-Pong". In this round, you will be competing for a large cash prize. Your job will be to pick one of several different numbered ping-pong balls, and then the game will commence. The host describes how the game works.
-
-A device consisting of a winding clear ramp and a series of pistons controls the outcome of the game. The ramp feeds balls onto a platform. The platform has room for three ping-pong balls at a time. The three balls on the platform are each aligned with one of three pistons. At each stage of the game, one of the three pistons will randomly fire, ejecting the ball it strikes. If the piston ejects the ball in the first position on the platform the balls in the second and third position on the platform each advance one space, and the next ball on the ramp advances to the third position. If the piston ejects the ball in the second position, the ball in the first position is released and rolls away, the ball in the third position advances two spaces to occupy the first position, and the next two balls on the ramp advance to occupy the second and third positions on the platform. If the piston ejects the ball in the third position, the ball in the first position is released and rolls away, the ball in the second position advances one space to occupy the first position, and the next two balls on the ramp advance to occupy the second and third positions on the platform.
-
-The ramp begins with 100 numbered ping-pong balls, arranged in ascending order from 1 to 100. The host activates the machine and the first three balls, numbered 1, 2, and 3, advance to the platform. Before the random firing of the pistons begins, you are asked which of the 100 balls you would like to pick. If your pick is ejected by one of the pistons, you win the grand prize, $10,000.
-
-Which ball should you choose to maximize your odds of winning the big prize? Please provide your answer as the number of the ball selected.
+Question 3: I read a paper about multiwavelength observations of fast radio bursts back in March 2021 on Arxiv, and it had a fascinating diagram of an X-ray time profile. There was a similar burst-1 diagram in another paper from one of the same authors about fast radio bursts back in July 2020, but I can't recall what the difference in seconds in the measured time span was. How many more seconds did one measure than the other? Just give the number.
 Steps:
-Step 1: Evaluate the problem statement provided in my user's prompt
-Step 2: Consider the probability of any ball on the platform earning the prize.
-Step 3: Evaluate the ball in position one. The probability of it earning the prize, P1, is 1/3
-Step 4: Using a calculator, evaluate the ball in position two. The probability of it earning the prize, P2, is the difference between 1 and the product of the complementary probabilities for each trial
-P2 = 1 - (2/3)(2/3)
-P2 = 5/9
-Step 5: Using a calculator, evaluate the ball in position three. The probability of it earning the prize, P3, is the difference between 1 and the product of the complementary probabilities for each trial
-P3 = 1 - (2/3)(2/3)(2/3)
-P3 = 19/27
-Step 6: Consider the possible outcomes of numbers higher than 3.
-Step 7: For each trial, either 1 or 2 balls from the ramp will advance to the platform. For any given selection, there is a 50% chance that the ball advances to position 2 or position 3.
-Step 8: As position three holds the highest chance of earning the prize, select the only ball known to occupy position three with certainty, ball 3.
-Step 9: Report the correct answer to my user, "3"
+1. Searched "arxiv" on Google.
+2. Opened arXiv.
+3. Searched "multiwavelength observations of fast radio bursts" on arXiv.
+4. Scrolled down to March 2021.
+5. Opened the "Multiwavelength observations of Fast Radio Bursts" PDF in a new tab.
+6. Opened each author's name to find the one that had a July 2020 paper (Nicastro, L).
+7. Opened the "The lowest frequency Fast Radio Bursts: Sardinia Radio Telescope detection of the periodic FRB 180916 at 328 MHz" PDF.
+8. Searched "time profile" in the first paper.
+9. Noted the time span of the diagram (0.3 s).
+10. Searched "burst-1 profile" in the second paper.
+11. Noted the time span of the diagram (0.5 s).
+12. Subtracted the two (0.5 - 0.3 = 0.2 s).
 Tools:
-None
-Final Answer: 3
+1. PDF access
+2. Calculator
+3. Web browser
+4. Search engine
+Final Answer: 0.2
 
 ==========================
 Now, I will ask you a question. Please answer the question step by step. Report your thoughts, and finish your answer with the following template: 

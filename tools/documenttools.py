@@ -9,25 +9,17 @@ from PIL import Image
 import pytesseract
 import pandas as pd
 
+BASE_URL = "https://agents-course-unit4-scoring.hf.space"
+
+
 @tool
-def save_and_read_file(content: str, filename: Optional[str] = None) -> str:
+def construct_question_related_file_url(question_id: str) -> str:
     """
-    Save content to a file and return the path.
+    Construct the URL of the file related to the question.
     Args:
-        content (str): the content to save to the file
-        filename (str, optional): the name of the file. If not provided, a random name file will be created.
+        question_id (str): the question id.
     """
-    temp_dir = tempfile.gettempdir()
-    if filename is None:
-        temp_file = tempfile.NamedTemporaryFile(delete=False, dir=temp_dir)
-        filepath = temp_file.name
-    else:
-        filepath = os.path.join(temp_dir, filename)
-
-    with open(filepath, "w") as f:
-        f.write(content)
-
-    return f"File saved to {filepath}. You can read this file to process its contents."
+    return f"The URL of the file related to the question is {BASE_URL + f'/files/{question_id}'}"
 
 
 @tool
@@ -62,6 +54,27 @@ def download_file_from_url(url: str, filename: Optional[str] = None) -> str:
         return f"File downloaded to {filepath}. You can read this file to process its contents."
     except Exception as e:
         return f"Error downloading file: {str(e)}"
+
+
+@tool
+def save_file(content: str, filename: Optional[str] = None) -> str:
+    """
+    Save content to a file and return the path.
+    Args:
+        content (str): the content to save to the file
+        filename (str, optional): the name of the file. If not provided, a random name file will be created.
+    """
+    temp_dir = tempfile.gettempdir()
+    if filename is None:
+        temp_file = tempfile.NamedTemporaryFile(delete=False, dir=temp_dir)
+        filepath = temp_file.name
+    else:
+        filepath = os.path.join(temp_dir, filename)
+
+    with open(filepath, "w") as f:
+        f.write(content)
+
+    return f"File saved to {filepath}. You can read this file to process its contents."
 
 
 @tool

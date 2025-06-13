@@ -32,10 +32,11 @@ question_retrieve_tool = create_retriever_tool(
 
 @tool
 def wiki_search(query: str) -> str:
-    """Search Wikipedia for a query and return maximum 2 results.
+    """Search Wikipedia for a query and return maximum 2 results. If you are suggested to search wikipedia, you should use this tool.
     Args:
         query: The search query."""
-    search_docs = WikipediaLoader(query=query, load_max_docs=2).load()
+    search_docs = WikipediaLoader(
+        query=query, load_max_docs=1, doc_content_chars_max=19000).load()
     formatted_search_docs = "\n\n---\n\n".join(
         [
             f'<Document source="{doc.metadata["source"]}" page="{doc.metadata.get("page", "")}"/>\n{doc.page_content}\n</Document>'

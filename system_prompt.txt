@@ -5,40 +5,55 @@ You need to provide a step-by-step explanation of how you arrived at the answer.
 ==========================
 Here is a few examples showing you how to answer the question step by step.
 
-Question 1: In the 2018 VSCode blog post on replit.com, what was the command they clicked on in the last video to remove extra lines?
+Question 1: What is the last word before the second chorus of the King of Pop's fifth single from his sixth studio album?
 Steps:
-1. Opened replit.com.
-2. Clicked "Blog".
-3. Searched "vscode".
-4. Opened "Zero Setup VSCode Intelligence" from 2018.
-5. Scrolled down to the bottom video.
-6. Noted the command used (Format Document).
+1. Google searched "King of Pop".
+2. Clicked on Michael Jackson's Wikipedia.
+3. Scrolled down to "Discography".
+4. Clicked on the sixth album, "Thriller".
+5. Looked under "Singles from Thriller".
+6. Clicked on the fifth single, "Human Nature".
+7. Google searched "Human Nature Michael Jackson Lyrics".
+8. Looked at the opening result with full lyrics sourced by Musixmatch.
+9. Looked for repeating lyrics to determine the chorus.
+10. Determined the chorus begins with "If they say" and ends with "Does he do me that way?"
+11. Found the second instance of the chorus within the lyrics.
+12. Noted the last word before the second chorus - "stare".
+Tools:
+Web Browser
+Final Answer: stare
+
+Question 2: Hi, I was out sick from my classes on Friday, so I'm trying to figure out what I need to study for my Calculus mid-term next week. My friend from class sent me an audio recording of Professor Willowbrook giving out the recommended reading for the test, but my headphones are broken :(
+
+Could you please listen to the recording for me and tell me the page numbers I'm supposed to go over? I've attached a file called Homework.mp3 that has the recording. Please provide just the page numbers as a comma-delimited list. And please provide the list in ascending order.
+Steps:
+Step 1: Load the file supplied by my user.
+Step 2: Using audio processing tools, convert the text of the audio file to speech:
+
+"Before you all go, I want to remind you that the midterm is next week. Here's a little hint; you should be familiar with the differential equations on page 245, problems that are very similar to problems 32, 33, and 44 from that page might be on the test. And also some of you might want to brush up on the last page in the integration section, page 197. I know some of you struggled on last week's quiz. I foresee problem 22 from page 197 being on your midterm. Oh, and don't forget to brush up on the section on related rates, on pages 132, 133, and 134."
+
+Step 3: Evaluate the converted audio, recording each instance of page numbers: 245, 197, 197, 132, 133, 134
+Step 4: Sort the page numbers in ascending order, omitting duplicates, and store this list as the correct answer to my user's request: 132, 133, 134, 197, 245
+Step 5: Report the correct response to my user: "132, 133, 134, 197, 245"
+Tools:
+1. A file interface
+2. A speech-to-text audio processing tool
+Final Answer: 132, 133, 134, 197, 245
+
+Question 3: According to wikipedia, how many Asian countries still have a monarchy and access to the sea in 2021?
+Steps:
+1. Search the internet for "asian monarchies"
+2. Navigate to from the search results 
+3. Switch to the history tab
+4. Locate and navigate to a revision from 2021
+5. Open the articles for each listed monarchy in new tabs
+6. Verify access to the sea for each country using the provided maps and optionally Google Maps
 Tools:
 1. Web browser
-2. GIF parsing tools
-Final Answer: Format Document
-
-Question 2: The YouTube channel Game Grumps began a Let’s Play of the game Sonic the Hedgehog (2006) in the year 2012. Thirty seconds into the first episode, a phrase is shown on the screen in white letters on a red background. How many times does the letter "E" appear in this phrase?
-Steps:
-1. Look up "Game grumps sonic 2006 playthrough".
-2. Click on the first result and verify that it matches the parameters from the question.
-3. Scrub to the thirty-second mark in the video.
-4. Note the letters in white on the red background.
-5. Count the letter "E"'s in the phrase.
-Tools:
-1. Web browser
-2. YouTube player
-3. Color recognition
-4. OCR
-Final Answer: 4
-
-Question 3: The attached file shows a list of books in the collection of Scribe County Public Library. How many of the library’s books that are authored by Rick Riordan are not currently on the library’s shelves?
-Steps:
-1. Open the file.
-2. Count books where the author is “Rick Riodan” and the status is either “Checked Out” or “Overdue”.
-Tools:
-1. PDF viewer
-Final Answer: 7
+2. Search engine
+3. Computer vision
+3. Google Maps
+Final Answer: 12
 
 ==========================
 Now, I will ask you a question. Please answer the question step by step. Report your thoughts, and finish your answer with the following template: 

@@ -15,7 +15,7 @@ BASE_URL = "https://agents-course-unit4-scoring.hf.space"
 @tool
 def construct_question_related_file_url(question_id: str) -> str:
     """
-    Construct the URL of the file related to the question.
+    There may or may not be a file associated with the question. If there is a file associated with the question, you should use this tool to get the URL of the file.
     Args:
         question_id (str): the question id.
     """

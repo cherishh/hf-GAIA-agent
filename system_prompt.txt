@@ -5,57 +5,40 @@ You need to provide a step-by-step explanation of how you arrived at the answer.
 ==========================
 Here is a few examples showing you how to answer the question step by step.
 
-Question 1: The attached spreadsheet contains the sales of menu items for a regional fast-food chain. Which city had the greater total sales: Wharvton or Algrimand?
+Question 1: In the 2018 VSCode blog post on replit.com, what was the command they clicked on in the last video to remove extra lines?
 Steps:
-1. Open the attached file.
-2. Locate the rows representing Wharvton and Algrimand.
-3. Write functions to sum each relevant row.
-4. Compare the sums.
+1. Opened replit.com.
+2. Clicked "Blog".
+3. Searched "vscode".
+4. Opened "Zero Setup VSCode Intelligence" from 2018.
+5. Scrolled down to the bottom video.
+6. Noted the command used (Format Document).
 Tools:
-1. Excel
-2. Calculator
-Final Answer: Wharvton
+1. Web browser
+2. GIF parsing tools
+Final Answer: Format Document
 
-Question 2: If this whole pint is made up of ice cream, how many percent above or below the US federal standards for butterfat content is it when using the standards as reported by Wikipedia in 2020? Answer as + or - a number rounded to one decimal place.
+Question 2: The YouTube channel Game Grumps began a Let’s Play of the game Sonic the Hedgehog (2006) in the year 2012. Thirty seconds into the first episode, a phrase is shown on the screen in white letters on a red background. How many times does the letter "E" appear in this phrase?
 Steps:
-1. Open the image.
-2. Search "butterfat wikipedia" on Google search.
-3. Open the Butterfat Wikipedia page.
-4. Click "View history" on the page.
-5. Scroll down to the end of 2020 and click the last 2020 version of the page.
-6. Check the ice cream requirement for fat content (10%).
-7. Click "View history" on the page.
-8. Scroll down to the beginning of 2020 and click the last 2019 version of the page.
-9. Check the ice cream requirement for fat content to ensure it's the same (10%).
-10. Calculate the fat percentage of the pint of ice cream from the image of the nutrition panel (21g fat per serving / 144g ice cream per serving = 14.6%).
-11. Calculate the difference from the standard (14.6% - 10% = 4.6%).
+1. Look up "Game grumps sonic 2006 playthrough".
+2. Click on the first result and verify that it matches the parameters from the question.
+3. Scrub to the thirty-second mark in the video.
+4. Note the letters in white on the red background.
+5. Count the letter "E"'s in the phrase.
 Tools:
-1. Image recognition tools
-2. Calculator
-3. Web browser
-4. Search engine
-Final Answer: +4.6
+1. Web browser
+2. YouTube player
+3. Color recognition
+4. OCR
+Final Answer: 4
 
-Question 3: I read a paper about multiwavelength observations of fast radio bursts back in March 2021 on Arxiv, and it had a fascinating diagram of an X-ray time profile. There was a similar burst-1 diagram in another paper from one of the same authors about fast radio bursts back in July 2020, but I can't recall what the difference in seconds in the measured time span was. How many more seconds did one measure than the other? Just give the number.
+Question 3: The attached file shows a list of books in the collection of Scribe County Public Library. How many of the library’s books that are authored by Rick Riordan are not currently on the library’s shelves?
 Steps:
-1. Searched "arxiv" on Google.
-2. Opened arXiv.
-3. Searched "multiwavelength observations of fast radio bursts" on arXiv.
-4. Scrolled down to March 2021.
-5. Opened the "Multiwavelength observations of Fast Radio Bursts" PDF in a new tab.
-6. Opened each author's name to find the one that had a July 2020 paper (Nicastro, L).
-7. Opened the "The lowest frequency Fast Radio Bursts: Sardinia Radio Telescope detection of the periodic FRB 180916 at 328 MHz" PDF.
-8. Searched "time profile" in the first paper.
-9. Noted the time span of the diagram (0.3 s).
-10. Searched "burst-1 profile" in the second paper.
-11. Noted the time span of the diagram (0.5 s).
-12. Subtracted the two (0.5 - 0.3 = 0.2 s).
+1. Open the file.
+2. Count books where the author is “Rick Riodan” and the status is either “Checked Out” or “Overdue”.
 Tools:
-1. PDF access
-2. Calculator
-3. Web browser
-4. Search engine
-Final Answer: 0.2
+1. PDF viewer
+Final Answer: 7
 
 ==========================
 Now, I will ask you a question. Please answer the question step by step. Report your thoughts, and finish your answer with the following template: 

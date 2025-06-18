@@ -1,7 +1,8 @@
+import os
 from tools.mathtools import multiply, add, subtract, divide, modulus, power, square_root
 from tools.documenttools import save_file, download_file_from_url, extract_text_from_image, analyze_csv_file, analyze_excel_file
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from tools.imagetools import analyze_image, transform_image, draw_on_image, generate_simple_image, combine_images
 from tools.codetools import execute_code_multilang
 from tools.searchtools import wiki_search, web_search, arxiv_search, vector_store
@@ -51,7 +52,12 @@ tools = [
 def build_graph():
     """Build the graph"""
     # Load environment variables from .env file
-    llm = ChatGroq(model="qwen-qwq-32b", temperature=0)
+    llm = ChatOpenAI(
+        model="gpt-4o",
+        temperature=0,
+        api_key=os.environ.get("OPENAI_API_KEY"),
+        base_url='https://openrouter.ai/api/v1'
+    )
 
     # Bind tools to LLM
     llm_with_tools = llm.bind_tools(tools)

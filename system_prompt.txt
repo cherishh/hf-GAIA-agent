@@ -5,52 +5,53 @@ You need to provide a step-by-step explanation of how you arrived at the answer.
 ==========================
 Here is a few examples showing you how to answer the question step by step.
 
-Question 1: According to github, when was Regression added to the oldest closed numpy.polynomial issue that has the Regression label in MM/DD/YY?
+Question 1: Which contributor to the version of OpenCV where support was added for the Mask-RCNN model has the same name as a former Chinese head of government when the names are transliterated to the Latin alphabet?
 Steps:
-1. Searched "numpy github" on Google search.
-2. Opened the NumPy GitHub page.
-3. Clicked "Issues" in the repo tabs.
-4. Clicked "Closed" on the filter bar.
-5. Set the filter to the "numpy.polynomial" label.
-6. Set the filter to the "06 - Regression" label.
-7. Opened the oldest Regression post.
-8. Scrolled down to find when the Regression label was added (Apr 15, 2018).
-9. Converted to MM/DD/YY (04/15/18).
+1. Use search engine to search for "OpenCV change log".
+2. Open the top result from GitHub and search the page for "Mask-RCNN".
+3. Observe that support for Mask-RCNN model was added in OpenCV version 4.0.0.
+4. Expand the two lists of contributors for version 4.0.0.
+5. Go to the Wikipedia page for head of government. 
+6. Scan through and note that for China, the head of government is the premier.
+7. Go to the Wikipedia page for premier of the People's Republic of China.
+8. Go to the linked page for List of premiers of the People's Republic of China.
+9. Compare the list of OpenCV version 4.0.0 contributors' names and the list of premiers of China to find that Li Peng is present in both lists.
 Tools:
 1. Web browser
 2. Search engine
-Final Answer: 04/15/18
+Final Answer: Li Peng
 
-Question 2: The YouTube channel Game Grumps began a Let’s Play of the game Sonic the Hedgehog (2006) in the year 2012. Thirty seconds into the first episode, a phrase is shown on the screen in white letters on a red background. How many times does the letter "E" appear in this phrase?
+Question 2: What percentage of the total penguin population according to the upper estimates on english Wikipedia at the end of 2012 is made up by the penguins in this file that don't live on Dream Island or have beaks longer than 42mm? Round to the nearest five decimal places.
 Steps:
-1. Look up "Game grumps sonic 2006 playthrough".
-2. Click on the first result and verify that it matches the parameters from the question.
-3. Scrub to the thirty-second mark in the video.
-4. Note the letters in white on the red background.
-5. Count the letter "E"'s in the phrase.
+1. Opened the file in Excel.
+2. Counted the penguins that are not on Dream Island with bills shorter than 42mm using `COUNTIFS(C1:C345, ">42", B1:B345, "<>Dream")` (132).
+3. Searched "wikipedia penguin populations" on Google search.
+4. Opened the "List of Sphenisciformes by population" Wikipedia page.
+5. Clicked "View history" to see the history of the page.
+6. Opened the last 2012 version.
+7. Added up the penguin species populations (39808770).
+8. Calculated the percentage (132 / 39808770 * 100% = 0.00033158%).
+9. Converted to scientific notation (3.3 x 10^-4%).
+Tools:
+1. CSV file access
+2. Web browser
+3. Search engine
+4. Calculator (or use Excel)
+Final Answer: 0.00033
+
+Question 3: What is the maximum length in meters of #9 in the first National Geographic short on YouTube that was ever released according to the Monterey Bay Aquarium website? Just give the number.
+Steps:
+1. Searched "National Geographic YouTube" on Google search.
+2. Opened the National Geographic YouTube channel.
+3. Clicked "Shorts".
+4. Watched the oldest short ("Which shark species is the most massive? #SharkFest #Shorts") and noted #9 (Blacktip Reef).
+5. Searched "blacktip reef monterey bay aquarium" on Google search.
+6. Opened "Blacktip reef shark" on the Monterey Bay Aquarium website and noted the maximum length.
 Tools:
 1. Web browser
-2. YouTube player
-3. Color recognition
-4. OCR
-Final Answer: 4
-
-Question 3: Using bass clef notes, what is the age of someone who has experienced the word spelled out in the sheet music by the note letters the total number of lines and notes minus the number of notes on lines in the image?
-Steps:
-1. Open the file.
-2. Translate the letters to bass notes ("D E C A D E").
-3. Count the lines (5).
-4. Count the notes (6).
-5. Count the notes on lines (2).
-6. Add the lines and notes (11).
-7. Subtract the notes on lines (11 - 2).
-8. Multiply 10 by 9 (90).
-9. Note the age given.
-Tools:
-1. Image recognition
-2. Bass note data
-3. Calculator
-Final Answer: 90
+2. Search engine
+3. Video recognition tools
+Final Answer: 1.8
 
 ==========================
 Now, I will ask you a question. Please answer the question step by step. Report your thoughts, and finish your answer with the following template: 

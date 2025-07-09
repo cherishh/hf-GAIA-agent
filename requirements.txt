@@ -1,23 +1,51 @@
+# Web framework and UI
 gradio
+
+# HTTP requests
 requests
+
+# Data processing
+pandas
+numpy
+
+# OpenAI integration
+openai
+
+# LangChain packages
 langchain
-langchain-community
 langchain-core
+langchain-community
 langchain-openai
-langchain-google-genai
-langchain-huggingface
 langchain-groq
-langchain-tavily
-langchain-chroma
+langchain-huggingface
+
+# LangGraph for agent workflows
 langgraph
-huggingface_hub
+
+# Vector database and embeddings
 supabase
+huggingface_hub
+
+# Search tools
+langchain-tavily
+
+# Document processing and PDF
 arxiv
-pymupdf
 wikipedia
-pgvector
-python-dotenv
+
+# Image processing
+pillow
 pytesseract
-matplotlib
-pydub
+
+# Excel/CSV processing
 openpyxl
+
+# Environment variables
+python-dotenv
+
+# Math operations (cmath is built-in, no need to include)
+
+# Database
+# sqlite3 is built-in in Python
+
+# Other utilities (tempfile, os, sys, io, uuid, base64, etc. are built-in)

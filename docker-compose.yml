@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  gaia-agent:
+    build: .
+    ports:
+      - "8888:8888"  # Jupyter notebook
+      - "7860:7860"  # Gradio app (if needed)
+    volumes:
+      - ./data:/app/data:ro  # Mount data directory as read-only
+      - ./notebooks:/app/notebooks  # Mount for saving notebook outputs
+      - agent_temp:/tmp/agent_files  # Temporary files volume
+    environment:
+      - PYTHONUNBUFFERED=1
+      - JUPYTER_ENABLE_LAB=yes
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - gaia-network
+
+  # Optional: Add a database service if needed
+  # postgres:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_DB: gaia_agent
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - gaia-network
+
+volumes:
+  agent_temp:
+  notebooks:
+  # postgres_data:
+
+networks:
+  gaia-network:
+    driver: bridge

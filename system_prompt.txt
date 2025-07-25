@@ -5,53 +5,55 @@ You need to provide a step-by-step explanation of how you arrived at the answer.
 ==========================
 Here is a few examples showing you how to answer the question step by step.
 
-Question 1: Which contributor to the version of OpenCV where support was added for the Mask-RCNN model has the same name as a former Chinese head of government when the names are transliterated to the Latin alphabet?
+Question 1: During the first week of August 2015, one of the NASA Astronomy Pictures of the Day shows the lights of a city on the horizon. The namesake of this city also has a landmark building in Chicago named after him. What is the name of the architectural firm that designed this landmark building? Give the first name appearing in the name of the firm as of June 2023.
 Steps:
-1. Use search engine to search for "OpenCV change log".
-2. Open the top result from GitHub and search the page for "Mask-RCNN".
-3. Observe that support for Mask-RCNN model was added in OpenCV version 4.0.0.
-4. Expand the two lists of contributors for version 4.0.0.
-5. Go to the Wikipedia page for head of government. 
-6. Scan through and note that for China, the head of government is the premier.
-7. Go to the Wikipedia page for premier of the People's Republic of China.
-8. Go to the linked page for List of premiers of the People's Republic of China.
-9. Compare the list of OpenCV version 4.0.0 contributors' names and the list of premiers of China to find that Li Peng is present in both lists.
+1. Use search engine to search for "NASA Astronomy Pictures of the Day August 2015".
+2. Navigate to the NASA Astronomy Picture of the Day Archive.
+3. Open the Astronomy Picture of the Day for 2015 August 1-7.
+4. Read the descriptions to check which picture shows the lights of a city on the horizon (2015 August 3) and note the name of the city (Marquette, Michigan, USA).
+5. Go to the Wikipedia article for Marquette, Michigan and note that the city was named after Jacques Marquette.
+6. Go to the Wikipedia article for Jacques Marquette and note that the Marquette Building in Chicago was named after him.
+7. Go to the Wikipedia page for the Marquette Building and verify that it is a Chicago landmark.
+8. Read the article and note that it was designed by architects Holabird & Roche.
+9. Go to the Wikipedia page for Holabird & Roche.
+10. Under "View history", select the latest version of the page revised during or before June 2023.
+11. Note that the name of the firm is Holabird & Root as of June 2023.
 Tools:
 1. Web browser
 2. Search engine
-Final Answer: Li Peng
+Final Answer: Holabird
 
-Question 2: What percentage of the total penguin population according to the upper estimates on english Wikipedia at the end of 2012 is made up by the penguins in this file that don't live on Dream Island or have beaks longer than 42mm? Round to the nearest five decimal places.
+Question 2: I'm curious about how much information is available for popular video games before their release. Find the Wikipedia page for the 2019 game that won the British Academy Games Awards. How many revisions did that page have before the month listed as the game's release date on that Wikipedia page (as of the most recent entry from 2022)?
 Steps:
-1. Opened the file in Excel.
-2. Counted the penguins that are not on Dream Island with bills shorter than 42mm using `COUNTIFS(C1:C345, ">42", B1:B345, "<>Dream")` (132).
-3. Searched "wikipedia penguin populations" on Google search.
-4. Opened the "List of Sphenisciformes by population" Wikipedia page.
-5. Clicked "View history" to see the history of the page.
-6. Opened the last 2012 version.
-7. Added up the penguin species populations (39808770).
-8. Calculated the percentage (132 / 39808770 * 100% = 0.00033158%).
-9. Converted to scientific notation (3.3 x 10^-4%).
+1. Search the web for British Academy Video Games Award for Best Game 2019
+2. Find the answer, Outer Wilds
+3. Find the Wikipedia page for Outer Wilds
+4. Go to the last revision from 2022.
+5. Note the release date, May 29, 2019
+6. View the page history
+7. Count how many edits were made to the page before May 2019
+8. Arrive at the answer, 60
 Tools:
-1. CSV file access
+1. Web browser
+2. Search engine
+3. Access to Wikipedia
+4. Calculator or counting function
+Final Answer: 60
+
+Question 3: What was the actual enrollment count of the clinical trial on H. pylori in acne vulgaris patients from Jan-May 2018 as listed on the NIH website?
+Steps:
+1. Searched "nih" on Google search.
+2. Clicked the top link to nih.gov.
+3. Searched "h pylori acne" in the search box.
+4. Clicked "More" and selected "Clinical Trials".
+5. Clicked the result about H. Pylori and acne.
+6. Checked the date to confirm it was January to May 2018.
+7. Opened "Tabular View".
+8. Scrolled down to Actual Enrollment and recorded the number.
+Tools:
+1. Search engine
 2. Web browser
-3. Search engine
-4. Calculator (or use Excel)
-Final Answer: 0.00033
-
-Question 3: What is the maximum length in meters of #9 in the first National Geographic short on YouTube that was ever released according to the Monterey Bay Aquarium website? Just give the number.
-Steps:
-1. Searched "National Geographic YouTube" on Google search.
-2. Opened the National Geographic YouTube channel.
-3. Clicked "Shorts".
-4. Watched the oldest short ("Which shark species is the most massive? #SharkFest #Shorts") and noted #9 (Blacktip Reef).
-5. Searched "blacktip reef monterey bay aquarium" on Google search.
-6. Opened "Blacktip reef shark" on the Monterey Bay Aquarium website and noted the maximum length.
-Tools:
-1. Web browser
-2. Search engine
-3. Video recognition tools
-Final Answer: 1.8
+Final Answer: 90
 
 ==========================
 Now, I will ask you a question. Please answer the question step by step. Report your thoughts, and finish your answer with the following template: 
